@@ -27,6 +27,8 @@ gps.loop()
 
 Once the loop begins running, GPS sentences will be written to files. You should see the files be created/continuously written to at `readrate` based on the codes in the following table:
 
+The filename will be the NMEA sentence, for example `GPGLL` and the file contents will be the set of data sent after that sentence.
+
 ### GPS Sentences or NMEA Sentences
 |NMEA Sentence|	Meaning|
 | ----------- | ----------- |
@@ -40,7 +42,6 @@ Once the loop begins running, GPS sentences will be written to files. You should
 |GPTRF|	Transit fix data|
 |GPSTN|	Multiple data ID|
 |GPXTE|	cross track error, measured|
-|GPZDA|	Date and time (PPS timing message, synchronized to PPS).|
-150	OK to send message.|
+|GPZDA|	Date and time (PPS timing message, synchronized to PPS).
 
 For more info, check out [this resource](https://www.rfwireless-world.com/Terminology/GPS-sentences-or-NMEA-sentences.html) from RF Wireless World.
