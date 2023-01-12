@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: gpstofile
+Version: 0.0.2
+Summary: Quick and easy way to read GPS sentences to file with no gpsd required.
+Home-page: https://github.com/pubudeux/gpstofile
+Author: pubudeux
+License: UNKNOWN
+Project-URL: Documentation, https://github.com/pubudeux/gpstofile
+Project-URL: Bug Reports, https://github.com/pubudeux/gpstofile/issues
+Project-URL: Source Code, https://github.com/pubudeux/gpstofile
+Description: # GPSToFile
+        
+        Quick and easy way to read GPS sentences to file with no gpsd required.
+        
+        ![running on a ublox gps dongle](https://github.com/pubudeux/gpstofile/blob/main/example-run.png)
+        
+        ## Getting Started
+        
+        Once you get the serial path of your GPS modem, you can get started either via command line, or by importing the module:
+        
+        `python -m gpstofile --port /dev/tty.usbmodem14401 --debug True`
+        
+        or:
+        
+        
+        ```python
+        from gpstofile import GPSToFile
+        
+        gps = GPSToFile('/dev/tty.usbmodem14401', readrate=1, debug=True)
+        
+        gps.loop()
+        ```
+        
+        
+Keywords: gps,serial,gpsd,gps sentences
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev

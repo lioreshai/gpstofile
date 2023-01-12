@@ -2,15 +2,16 @@
 
 Quick and easy way to read GPS sentences to file with no gpsd required.
 
-![running on a ublox gps dongle](example-run.png)
+![running on a ublox gps dongle](https://github.com/pubudeux/gpstofile/blob/main/example-run.png)
 
 ## Getting Started
 
-The only required library is pyserial:
+Once you get the serial path of your GPS modem, you can get started either via command line, or by importing the module:
 
-`pip install -r requirements.txt`
+`python -m gpstofile --port /dev/tty.usbmodem14401 --debug True`
 
-Once you get the serial path of your GPS modem, you can get started:
+or:
+
 
 ```python
 from gpstofile import GPSToFile

@@ -8,3 +8,6 @@ GPGSV
 GPRMC
 GPTXT
 GPVTG
+venv
+build
+dist
