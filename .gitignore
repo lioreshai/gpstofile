@@ -1,0 +1,10 @@
+.vscode
+config.ini
+__pycache__
+GPGGA
+GPGLL
+GPGSA
+GPGSV
+GPRMC
+GPTXT
+GPVTG
