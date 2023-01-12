@@ -2,6 +2,10 @@
 
 Quick and easy way to read GPS sentences to file with no gpsd required.
 
+
+`pip install gpstofile`
+
+
 ![running on a ublox gps dongle](https://github.com/pubudeux/gpstofile/blob/main/example-run.png)
 
 ## Getting Started
