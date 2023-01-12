@@ -42,3 +42,5 @@ Once the loop begins running, GPS sentences will be written to files. You should
 |GPXTE|	cross track error, measured|
 |GPZDA|	Date and time (PPS timing message, synchronized to PPS).|
 150	OK to send message.|
+
+For more info, check out [this resource](https://www.rfwireless-world.com/Terminology/GPS-sentences-or-NMEA-sentences.html) from RF Wireless World.
