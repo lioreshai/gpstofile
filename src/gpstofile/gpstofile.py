@@ -8,11 +8,11 @@ CONTROL_BYTE = 36
 
 class GPSToFile:
 
-    def __init__(self, path: str, baudrate: int = 9600, readrate: int = 1, debug: bool = False, append: bool = False):
+    def __init__(self, path: str, baudrate: int = 115200, readrate: float = .4, debug: bool = False, append: bool = False):
         if readrate is None:
             self._readrate = 1
         else:
-            self._readrate = readrate
+            self._readrate = float(readrate)
         if baudrate is None:
             baudrate = 9600
         self._debug = debug
