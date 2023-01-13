@@ -8,6 +8,17 @@ Quick and easy way to read GPS sentences to file with no gpsd required.
 
 ![running on a ublox gps dongle](https://github.com/pubudeux/gpstofile/blob/main/example-run.png)
 
+## Configuration
+
+Here are the available configuration options:
+
+| Key | Type | Description |
+| ----------- |----------- |  ----------- | 
+| **p**ath | str | Path to serial port |
+| **b**audrate | int | Serial port baud rate (Default: 9600) |
+| **r**eadrate | int | Read interval to listen for GPS sentences on serial bus (Default: 1s) | 
+| **d**ebug | bool | Print verbose log statements for debugging purposes |
+
 ## Getting Started
 
 Once you get the serial path of your GPS modem, you can get started either via command line, or by importing the module:
