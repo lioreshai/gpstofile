@@ -8,13 +8,19 @@ UBLOX_CONTROL_BYTE = 36
 
 class GPSToFile:
 
-    def __init__(self, path: str, baudrate: int = 9600, readrate: int = 1, debug: bool = False):
-        self._ser = serial.Serial(path, baudrate=baudrate, timeout=1)
-        self._read_rate = readrate
-        self._debug = debug        
+    def __init__(self, path: str, baudrate: int = 9600, readrate: int = 1, debug: bool = False, append: bool = False):
+        if readrate is None:
+            self._readrate = 1
+        else:
+            self._readrate = readrate
+        if baudrate is None:
+            baudrate = 9600
+        self._debug = debug
+        self._append = append   
+        self._ser = serial.Serial(path, baudrate=baudrate, timeout=1)     
         print(str(datetime.utcnow()) + ' -- Initialized GPSToFile. Listening on "' + path + '" --')
         if self._debug:
-            print(str(datetime.utcnow()) + ' --  readrate: ' + str(readrate) + ' seconds')
+            print(str(datetime.utcnow()) + ' --  readrate: ' + str(self._readrate) + ' seconds')
             print(str(datetime.utcnow()) + ' --  baudrate: ' + str(baudrate) + ' seconds')
 
     def _wait_for_ctrl(self):
@@ -32,8 +38,8 @@ class GPSToFile:
         while True:
             self._wait_for_ctrl()
             [command, payload] = self._read_sentence()
-            f = open(command, 'w')
+            f = open(command, 'a' if self._append else 'w')
             f.write(payload)
             if self._debug:
                 print(str(datetime.utcnow()) + ' [' + command + '] << ' + payload)
-            time.sleep(1)
+            time.sleep(self._readrate)
