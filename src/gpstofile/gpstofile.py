@@ -4,7 +4,7 @@ import time
 from typing import Tuple
 import serial
 
-UBLOX_CONTROL_BYTE = 36
+CONTROL_BYTE = 36
 
 class GPSToFile:
 
@@ -25,7 +25,7 @@ class GPSToFile:
 
     def _wait_for_ctrl(self):
         bytes = self._ser.read(1)
-        while bytes[0] is not UBLOX_CONTROL_BYTE:
+        while bytes[0] is not CONTROL_BYTE:
             bytes = self._ser.read(1)
 
     def _read_sentence(self) -> Tuple[str, str]:
