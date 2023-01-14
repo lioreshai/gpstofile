@@ -16,7 +16,7 @@ Here are the available configuration options:
 | ----------- |----------- |  ----------- | 
 | **p**ath | str | Path to serial port |
 | **b**audrate | int | Serial port baud rate (Default: 115200) |
-| **r**eadrate | int | Read interval to listen for GPS sentences on serial bus (Default: .4s) | 
+| **r**eadrate | int | Read interval to listen for GPS sentences on serial bus (Default: 0s) | 
 | **d**ebug | bool | Print verbose log statements for debugging purposes (Default: False) |
 | **a**ppend | bool | Append to file instead of overwriting file contents on each new message received (Default: False) | 
 

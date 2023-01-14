@@ -8,13 +8,13 @@ CONTROL_BYTE = 36
 
 class GPSToFile:
 
-    def __init__(self, path: str, baudrate: int = 115200, readrate: float = .4, debug: bool = False, append: bool = False):
+    def __init__(self, path: str, baudrate: int = 115200, readrate: float = 0, debug: bool = False, append: bool = False):
         if readrate is None:
-            self._readrate = 1
+            self._readrate = 0
         else:
             self._readrate = float(readrate)
         if baudrate is None:
-            baudrate = 9600
+            baudrate = 115200
         self._debug = debug
         self._append = append   
         self._ser = serial.Serial(path, baudrate=baudrate, timeout=1)     
